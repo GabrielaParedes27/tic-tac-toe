@@ -1,7 +1,7 @@
 .square {
   width: 100px;
   height: 100px;
-  background-color: #a799b7;
+  background-color: #364f6b;
   margin: 5px;
   transition: all 0.2s;
   border-radius: 0%;
@@ -22,7 +22,7 @@
 }
 
 .square--X {
-  background-color: #fb3640;
+  background-color: #fc5185;
   clip-path: polygon(
     20% 0%,
     0% 20%,
@@ -40,6 +40,35 @@
 }
 
 .square--O {
-  background-color: #fdca40;
+  background-color: #3fc1c9;
   border-radius: 50%;
+}
+
+.square--X.winner {
+  animation: x-winner-animation infinite 2s ease-in-out;
+}
+
+.square--O.winner {
+  animation: o-winner-animation infinite 0.5s ease-in-out;
+}
+
+@keyframes x-winner-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes o-winner-animation {
+  0% {
+    border-radius: 50%;
+  }
+  50% {
+    border-radius: 0%;
+  }
+  100% {
+    border-radius: 50%;
+  }
 }
